@@ -1,0 +1,18 @@
+.error-wrapper {
+    margin: 0 auto;
+    background-color: $color-secondary;
+    max-width: 450px;
+    text-align: center;
+    padding: 2rem 0.5rem;
+    .error-text {
+        @include fluid-font(16px, 20px);
+        font-weight: 700;
+    }
+    .error {
+        color: $color-primary;
+        margin-right: 1rem;
+    }
+    .error-msg {
+        @include fluid-font(12px, 16px);
+    }
+}

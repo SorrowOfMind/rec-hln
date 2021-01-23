@@ -1,0 +1,10 @@
+.books-list {
+    @include fluid-font(12px, 14px);
+    .table {
+        border: 1px solid $color-primary;
+    }
+    .table-head {
+        background-color: $color-primary;
+        color: #fff;
+    }
+}

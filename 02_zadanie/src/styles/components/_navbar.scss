@@ -1,0 +1,24 @@
+.navbar {
+    background-color: $color-primary;
+    .title {
+        color: $color-secondary;
+        @include fluid-font(28px, 35px);
+        span {
+            color: #fff;
+        }
+    }
+}
+
+.material-icons { 
+    font-size: 24px;
+    position: relative;
+    top: .2rem;
+}
+
+@media only screen and (min-width: 768px){
+    .material-icons { 
+        font-size: 36px;
+        position: relative;
+        top: .4rem;
+    }
+}

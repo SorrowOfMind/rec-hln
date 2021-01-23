@@ -1,0 +1,225 @@
+/*====================
+VARIABLES
+====================*/
+
+:root {
+    --color-font-primary: #282828;
+    --color-font-secondary: #949a9d;
+    --color-font-markout: #f54337;
+    --color-bg-secondary: #f9f9f9;
+    --color-shadow: #8c8686;
+}
+
+
+/*====================
+RESET
+====================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+html,
+body {
+    height: 100%;
+    font-size: 10px;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    background-color: var(--color-bg-secondary);
+    color: var(--color-font-primary);
+}
+
+
+/*====================
+GENERAL STYLES
+====================*/
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/*====================
+STYLES
+====================*/
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    background-color: #fff;
+    padding: 2rem;
+    box-shadow: 0 0 1px var(--color-shadow);
+    margin: 2rem;
+}
+
+.product-title {
+    font-size: calc(16px + 12 * ((100vw - 425px)/(1600 - 425)));
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-cover {
+    margin: 2rem auto 0 auto;
+    width: 181px;
+    height: 236px;
+}
+
+.product-pdf,
+.product-author,
+.product-price {
+    color: var(--color-font-markout);
+}
+
+.product-pdf,
+.product-table,
+.section-product-description {
+    font-size: calc(14px + 2 * ((100vw - 425px)/(1600 - 425)));
+}
+
+.product-pdf {
+    text-align: center;
+    width: max-content;
+    margin: 2rem auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-pdf:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 1%;
+    height: 0;
+    border-bottom: 1px solid transparent;
+    transition: transform .2s, border .2s;
+}
+
+.product-pdf:hover:before {
+    border-bottom: 1px solid var(--color-font-markout);
+    transform: scaleX(110);
+}
+
+.product-table {
+    text-align: left;
+    color: var(--color-font-secondary);
+    margin-top: 2rem;
+}
+
+td,
+th {
+    padding: .5rem;
+}
+
+th {
+    font-weight: normal;
+}
+
+td {
+    color: var(--color-font-primary);
+}
+
+.btn-cart {
+    display: block;
+    background-color: var(--color-font-markout);
+    border: 1px solid var(--color-font-markout);
+    color: #fff;
+    font-size: 1.8rem;
+    text-align: center;
+    width: 100%;
+    padding: 1.5rem 3.5rem;
+    cursor: pointer;
+    transition: background .2s linear, color .2s linear;
+}
+
+.btn-cart:hover {
+    background-color: #fff;
+    color: var(--color-font-markout);
+}
+
+.section-product-description {
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.description-title {
+    font-size: calc(16px + 2 * ((100vw - 425px)/(1600 - 425)));
+}
+
+[class^=description-list] {
+    list-style: none;
+    list-style-position: inside;
+    margin-left: 1.5rem;
+}
+
+[class^=description-list] li {
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+[class^=description-list] li:before {
+    content: "\2022";
+    color: var(--color-font-markout);
+    font-weight: bold;
+    position: absolute;
+    display: inline-block;
+    margin-left: -1.5rem;
+}
+
+.description-text,
+.description-title {
+    padding: 1rem 0;
+}
+
+
+/*====================
+MQs
+====================*/
+
+@media only screen and (min-width: 768px) {
+    .section {
+        padding: 3rem 4rem;
+    }
+    .product-cover {
+        margin: 2rem 0 0 0;
+    }
+    .product-details {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    .product-info {
+        padding-left: 10rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .section {
+        padding: 4rem 8rem;
+    }
+    .product-info {
+        width: calc(100% - 181px);
+        display: flex;
+        justify-content: space-between;
+    }
+    .product-cart {
+        margin-top: 2rem;
+    }
+}

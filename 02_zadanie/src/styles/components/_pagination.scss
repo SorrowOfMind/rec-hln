@@ -1,0 +1,35 @@
+.pagination {
+    @include fluid-font(13px, 16px);
+    @include flexbox(row, center, center);
+    flex-wrap: wrap;
+    .arrow {
+        color: $color-primary;
+        cursor: pointer;
+        position: relative;
+    }
+}
+
+.page {
+    @include flexbox(row, center, center);
+    cursor: pointer;
+    border: 1px solid $color-primary;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: color .2s ease-out, background .2s ease-out;
+    &.active, &:hover {
+        background-color: $color-primary;
+        color: $color-secondary;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .pagination .arrow{
+        top: 0;
+    }
+    
+    .page {
+        width: 3rem;
+        height: 3rem;
+    }
+}

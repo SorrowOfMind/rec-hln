@@ -1,0 +1,49 @@
+.actions-wrapper {
+    @include flexbox(column, space-between, center);
+    [class*=action-] {
+        @include fluid-font(14px, 16px);
+        padding: .5rem 1rem;
+        border: 1px solid $color-primary;
+        &:focus {
+            box-shadow: 0 0 5px rgba(0,0,0,0.4);
+        }
+    }
+}
+
+.actions-small {
+    width: 100%;
+    @include flexbox(row, center, center);
+    .action-sort, .action-select {
+        width: calc(40% - 4vw);
+    }
+    .action-select {
+        margin-left: 2rem;
+    }
+}
+
+.action-search-text {
+    background-color: $color-primary;
+    color: $color-secondary;
+    padding: 0 2rem;
+}
+
+@media only screen and (min-width: 768px){
+    .actions-small {
+        @include flexbox(row, flex-end, center);
+        .action-sort, .action-select {
+            width: 25%;
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .actions-wrapper {
+        @include flexbox(row, space-between, flex-end);
+        .action-search {
+            width: 50%;
+        }
+    }
+    .actions-small .action-sort, .actions-small .action-select {
+            width: 35%;
+        }
+}
