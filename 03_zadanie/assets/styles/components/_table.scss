@@ -1,0 +1,61 @@
+.table-wrapper {
+    filter: drop-shadow(0 0 5px $color-shadow);
+}
+
+.table {
+    background-color: #fff;
+    border-radius: $radius;
+    overflow: hidden;
+    @include fluid-font(14px, 16px);
+
+    tr:not(:last-of-type) {
+        border-bottom: 1px solid $color-secondary;
+    }
+
+    .table-head {
+        background-color: $color-secondary;
+        color: $color-primary;
+        border-radius: $radius;
+    }
+
+    .actions-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .btn-edit, .btn-delete {
+            @include fluid-font(14px, 16px);
+            flex: 1;
+            max-width: 70px;
+        }
+
+        .btn-edit {
+            background-color: $color-edit;
+            margin-right: 1rem;
+            &:hover {
+                background-color: $color-edit-hover;
+            }
+        }
+    
+        .btn-delete {
+            background-color: $color-delete;
+            &:hover {
+                background-color: $color-delete-hover;
+            } 
+        }
+    }
+}
+
+@media only screen and (max-width: 640px){
+    .actions-wrapper {
+        flex-direction: column;
+        .btn-edit, .btn-delete {
+            max-width: 100%;
+            width: 100%;
+        }
+        .btn-edit {
+            margin-right: 0 !important;
+            margin-bottom: .5rem;
+        }
+    }
+}

@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section class="section-books mt-5">
+
+        {% for message in app.flashes('notice') %}
+            <div class="alert alert-success alert-delete" role="alert" id="notice">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        {% if books %}
+        <a href={{ path('book_create') }} class="btn btn-create ">DODAJ &plus;</a>
+        <p class="my-4 instruction">Kliknij w tytuł, aby zobaczyć szczegóły.</p>
+        <div class="table-responsive table-wrapper">
+            <table class="table table-borderless">
+                <thead class="table-head">
+                    <tr class="text-center">
+                        <th scope="col">ID</th>
+                        <th scope="col">Tytuł</th>
+                        <th scope="col">Autor</th>
+                        <th scope="col">Cena netto zł</th>
+                        <th scope="col">VAT %</th>
+                        <th scope="col">Akcje</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for book in books %}
+                        <tr class="text-center">
+                            <td>{{ book.id }}</td>
+                            <td>
+                                <a href={{ path('book_show', {id: book.id}) }}>{{ book.title }}</a>
+                            </td>
+                            <td>{{ book.author }}</td>
+                            <td>{{ book.pricenet | number_format(2, '.') }}</td>
+                            <td>{{ book.vat | number_format(2, '.') }}</td>
+                            <td>
+                                <div class="actions-wrapper">
+                                    <a href={{ path('book_edit', {id: book.id}) }} class="btn btn-edit btn-small">Edytuj</a>
+                                    {{ include('forms/form_delete.html.twig') }}
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        {% else %}
+        <div class="msg-nobooks">
+            <p class="msg-title">Nie ma jeszcze żadnej książki na liście</p>
+            <p class="msg-text py-3">Dodaj pierwszą książkę!</p>
+            <a href={{ path('book_create') }} class="btn btn-create">DODAJ &plus;</a>
+        </div>
+        {% endif %}
+
+    </section>
+{% endblock %}
+

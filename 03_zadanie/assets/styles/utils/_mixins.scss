@@ -1,0 +1,11 @@
+@function strip-unit($val) {
+    @return $val / ($val * 0 + 1);
+}
+
+@mixin fluid-font($min, $max) {
+    font-size: calc(#{$min} + #{strip-unit($max - $min)} * ((100vw - 360px) / 1200));
+}
+
+@mixin shadow($x,$y,$blur,$offset,$color) {
+    box-shadow: $x $y $blur $offset $color;
+}

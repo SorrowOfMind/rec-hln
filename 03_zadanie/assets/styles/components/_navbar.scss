@@ -1,0 +1,21 @@
+.navbar {
+    background-color: $color-primary;
+    color: $color-secondary;
+    .title {
+        font-family: $font-title;
+        @include fluid-font(40px, 50px);
+        span {
+            font-weight: bold;
+        }
+    }
+    .btn-view {
+        @include fluid-font(16px, 20px);
+        background-color: $color-secondary;
+        padding: .5rem 2rem;
+        color: $color-primary;
+        border-radius: $radius;
+        &:hover {
+            background-color: $color-secondary-hover;
+        }
+    }
+}

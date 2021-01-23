@@ -1,0 +1,57 @@
+.section-home, .msg-nobooks, .section-details {
+    background-color: #fff;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    @include fluid-font(14px, 18px);
+    @include shadow(0, 0, 10px, 0, $color-shadow);
+    border-radius: $radius;
+    margin-top: 5rem;
+    .welcome-title, .msg-title {
+        font-weight: bold;
+        @include fluid-font(18px, 24px);
+    }
+    .welcome-text span {
+        color: $color-secondary;
+    }
+}
+
+.instruction {
+    @include fluid-font(14px, 16px);
+}
+
+.btn-create {
+    @include fluid-font(16px, 20px);
+    background-color: $color-create;
+    padding: .5rem 4rem;
+    color: #fff;
+    border-radius: $radius;
+    &:hover {
+        color: #fff;
+        background-color: $color-create-hover;
+    }
+}
+
+.details-title {
+    @include fluid-font(18px, 20px);
+    background-color: $color-secondary;
+    padding: 2rem 1rem;
+    font-weight: bold;
+    margin-bottom: 0;
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+}
+
+.details-content {
+    @include fluid-font(16px, 18px);
+    text-align: left;
+    padding-bottom: 2rem;
+    th {
+        background-color: rgba(78, 205, 196, 0.1);
+    }
+}
+
+.section-books {
+    position: relative;
+}

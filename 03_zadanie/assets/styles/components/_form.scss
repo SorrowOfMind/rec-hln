@@ -1,0 +1,29 @@
+.form-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    .form-title {
+        @include fluid-font(25px, 35px);
+        color: $color-primary;
+    }
+    label, input {
+        @include fluid-font(16px, 18px);
+    }
+    label {
+        padding-bottom: 1rem;
+    }
+    input {
+        transition: box-shadow .2s ease-out;
+        padding: .8rem 1rem;
+        &:focus {
+            @include shadow(0,0,10px,0,$color-create);
+        }
+    }
+}
+
+.go-back-link {
+    @include fluid-font(16px, 18px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}

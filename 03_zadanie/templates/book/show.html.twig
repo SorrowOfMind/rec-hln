@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section class="section-details clearfix">
+        <h2 class="details-title">SZCZEGÓŁY</h2>
+        <div class="details-content">
+            <table class="table table-bordered">
+                <tr>
+                    <th scope="row">ID:</th>
+                    <td>{{book.id}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Tytuł:</th>
+                    <td>{{book.title}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Autor:</th>
+                    <td>{{book.author}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Cena netto:</th>
+                    <td>{{book.pricenet | number_format(2, '.')}} zł</td>
+                </tr>
+                <tr>
+                    <th scope="row">VAT:</th>
+                    <td>{{book.vat | number_format(2, '.')}}%</td>
+                </tr>
+                <tr>
+                    <th scope="row">Cena brutto:</th>
+                    <td>{{grossPrice | number_format(2, '.')}} zł</td>
+                </tr>
+            </table>
+        </div>
+        <a href={{ path('book_index') }} class="float-left">&larr; Wróć</a>
+    </section>
+{% endblock %}

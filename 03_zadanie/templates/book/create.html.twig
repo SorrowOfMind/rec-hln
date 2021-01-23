@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="form-wrapper my-5">
+        <h2 class="form-title pb-3">Dodaj nową książkę</h2>
+        {{ form(form, {'attr': {'class': 'clearfix', 'autocomplete': 'off'}}) }}
+        <a href={{ path('book_index') }} class="float-left go-back-link">&larr; Wróć</a>
+    </div>
+{% endblock %}
